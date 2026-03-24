@@ -14,7 +14,9 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 // Cada import trae el componente que creamos antes
 import WelcomeScreen from '../screens/WelcomeScreen';
 import LoginScreen from '../screens/LoginScreen';
-import HomeScreen from '../screens/HomeScreen';
+
+import HomeTabsNavigator from './HomeTabsNavigator';
+
 
 // Creamos el Stack — esto nos da dos cosas:
 // Stack.Navigator = el contenedor de las pantallas
@@ -33,17 +35,11 @@ const AppNavigator = () => {
                 initialRouteName="Welcome"
                 screenOptions={{
                     // Estas opciones aplican a todas las pantallas del stack
-                    headerStyle: {
-                        backgroundColor: '#1a1a2e',  // color del header
-                    },
+                    headerStyle: {backgroundColor: '#1a1a2e'},  // color del header
                     headerTintColor: '#ffffff',     // color del texto y flecha del header
-                    headerTitleStyle: {
-                        fontWeight: 'bold',
-                    },
+                    headerTitleStyle: {fontWeight: 'bold' },
                     // contentStyle define el fondo de cada pantalla
-                    contentStyle: {
-                        backgroundColor: '#1a1a2e',
-                    },
+                    contentStyle: {backgroundColor: '#1a1a2e'},
                 }}
             >
                 {/* Cada Stack.Screen registra una pantalla en el navegador */}
@@ -62,15 +58,13 @@ const AppNavigator = () => {
             />
             <Stack.Screen 
                 name="Home"
-                component={HomeScreen}
+                component={HomeTabsNavigator}
                 options={{
-                    title: "Mi Banco", 
-                    headerBackVisible: false, 
+                    headerShown: false,         // el tab no necesita header
+                    headerBackVisible: false,   // no volver al login
                 }}
             />
-
             </Stack.Navigator>
-
         </NavigationContainer>
     )
 }

@@ -1,5 +1,5 @@
 import react from "react";
-import { View, Text, TouchableOpacity, ScrollView, StyleSheet } from "react-native/types_generated/index";
+import { View, Text, TouchableOpacity, ScrollView, StyleSheet } from "react-native";
 
 const DashboardScreen = () => {
     return (
@@ -12,9 +12,9 @@ const DashboardScreen = () => {
 
             {/* Saldo, esto esta en una tarjeta */}
             <View style={styles.tarjeta}>
-                <View style={styles.tarjetaLabel}>Saldo disponible</View>
-                <View style={styles.tarjetaSaldo}>$12,450.00</View>
-                <View style={styles.tarjetaLabel}>**** **** **** 4291</View>
+                <Text style={styles.tarjetaLabel}>Saldo disponible</Text>
+                <Text style={styles.tarjetaSaldo}>$12,450.00</Text>
+                <Text style={styles.tarjetaLabel}>**** **** **** 4291</Text>
             </View>
 
             {/* Acciones rapidas */}
@@ -35,7 +35,7 @@ const DashboardScreen = () => {
             </View>
 
             {/* Movimientos */}
-            <Text style={styles.seccionTitulo}>ültimos movimientos</Text>
+            <Text style={styles.seccionTitulo}>Últimos movimientos</Text>
             <View style={styles.movimiento}>
                 <Text style={styles.movimientoNombre}>Netflix</Text>
                 <Text style={styles.movimientoMonto}>- $15.99</Text>
