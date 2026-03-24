@@ -1,20 +1,15 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+// App.js
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
-}
+// React siempre primero
+import React from 'react';
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+// Importamos nuestro navegador — este contiene todas las pantallas
+import AppNavigator from './navigation/AppNavigator';
+
+// App es el componente raíz — el punto de entrada de toda la app
+// Solo tiene una responsabilidad: renderizar el navegador
+const App = () => {
+  return <AppNavigator />;
+};
+
+export default App;
